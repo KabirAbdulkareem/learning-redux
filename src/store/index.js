@@ -1,30 +1,20 @@
 import { createStore, combineReducers } from "redux";
+import personReducer from "./reducers/personReducer"
+import gameReducer from "./reducers/gameReducer"
 
-const personReducer = (state = {}, { type, payload }) => {
-  if (type === "UPDATE_NAME") {
-    return { name: payload };
-  }
-  return state;
-};
 
-const gameReducer = (state = {}, { type, payload }) => {
-  if (type === "UPDATE_GAME") {
-    return { name: payload };
-  }
-  return state;
-};
+
 
 const AllReducers = combineReducers({
   person: personReducer,
   game: gameReducer,
 });
 
-const store = createStore(AllReducers);
-
-console.log(store.getState());
-
-store.dispatch({ type: "UPDATE_NAME", payload: "Daddy Maxwell" });
-console.log(store.getState());
+const InitialState = {
+    game: {name: 'Football'},
+    person: {name: 'Kabir'}
+}
+const store = createStore(AllReducers,InitialState,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 

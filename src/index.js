@@ -5,4 +5,11 @@ import App from "./App";
 import store from "./store/index"
 
 
-ReactDOM.render(<App />, document.getElementById("root"));
+
+let render = ()=>{
+  ReactDOM.render(<App />, document.getElementById("root"))
+}
+
+store.subscribe(render)
+
+render()
