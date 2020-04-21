@@ -1,5 +1,5 @@
-export const UPDATE_NAME = "UPDATE_NAME"
-const update_person = { type: UPDATE_NAME, payload: "Daddy Maxwell" }
+export const UPDATE_PERSON = "UPDATE_PERSON"
+const update_person = { type: UPDATE_PERSON, payload: "Daddy Maxwell" }
 
 
 export default update_person
